@@ -12,8 +12,8 @@
       var vm = this;
       vm.searchTerm = '';
       let searchTerm = vm.searchTerm;
-      vm.searched = [];
-      vm.date = Date.now();
+      vm.searched = []; // Previus searches array
+      vm.date = Date.now(); // Time stamp
 
 
       ////////////
@@ -22,8 +22,9 @@
       vm.searchForWeather = function(searchTerm) {
         weatherFactory
           .searchForWeather(searchTerm)
-          .then(function(response) {
-            if (response.status == 200) {
+          .then(function(response)
+          {
+            if (response.status == 200) { // Toastr alerts
               weatherData(response.data);
               toastr.success("Weather Found");
             } else {
@@ -34,8 +35,7 @@
           });
       };
 
-
-      function weatherData(detailedResults) {
+      function weatherData(detailedResults) { // Weather data specifics
         vm.detailedResults = {
           cityName: detailedResults.name,
           mainWeather: detailedResults.weather.main,
@@ -47,6 +47,7 @@
           tempMax: detailedResults.main.temp_max,
           windSpeed: detailedResults.wind.speed,
         }
+        // Pushes results into a recent searches array
         vm.searched.push(detailedResults.name)
 
       }
