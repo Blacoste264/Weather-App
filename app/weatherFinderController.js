@@ -5,15 +5,19 @@
         .module('app')
         .controller('weatherController', weatherController);
 
-    weatherController.$inject = ['weatherFactory'];
+    weatherController.$inject = ['weatherFactory', 'toastr'];
 
     /* @ngInject */
-    function weatherController(weatherFactory) {
+    function weatherController(weatherFactory, toastr) {
         var vm = this;
         vm.searchTerm = '';
         let searchTerm = vm.searchTerm;
+        vm.searched = [];
+        vm.date=Date.now();
+
 
         ////////////
+
 
       vm.searchForWeather= function(searchTerm) {
           weatherFactory
@@ -29,15 +33,15 @@
                 humidity: vm.results.main.humidity,
                 tempMin: vm.results.main.temp_min,
                 tempMax: vm.results.main.temp_max,
-                visibility: vm.results.visibility,
                 windSpeed: vm.results.wind.speed,
-                windDirection: vm.results.wind.deg,
-                clouds: vm.results.clouds.all,
-                sunrise: vm.results.sys.sunrise,
-                sunset: vm.results.sys.sunset,
               }
+        vm.searched.push(vm.results.name)
+
+
 
             })
         }
+
+
     }
 })();
