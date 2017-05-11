@@ -1,0 +1,11 @@
+.jumbotron {
+  background-image: url("/imgs/weather.gif");
+  background-position: center;
+  background-size: cover;
+  text-align: right;
+  text-shadow: 4px 5px 5px white;
+
+}
+.btn-group {
+  margin-top: 20px;
+}

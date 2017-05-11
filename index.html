@@ -20,11 +20,6 @@
       <h1>Weather Application</h1>
       <p>Cheack the weather in your area</p>
     </div>
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-secondary" ng-click="vm.searchForWeather(vm.searched[vm.searched.length -2])">{{vm.searched[vm.searched.length -2]}}</button>
-      <button type="button" class="btn btn-secondary" ng-click="vm.searchForWeather(vm.searched[vm.searched.length -3])">{{vm.searched[vm.searched.length -3]}}</button>
-      <button type="button" class="btn btn-secondary" ng-click="vm.searchForWeather(vm.searched[vm.searched.length -4])">{{vm.searched[vm.searched.length -4]}}</button>
-    </div>
     <!-- Left Column -->
     <div class="row">
       <div class="col-xs-12 col-md-4">
@@ -36,9 +31,14 @@
             </span>
           </div><!-- /input-group -->
 
-
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" ng-click="vm.searchForWeather(vm.searched[vm.searched.length -2])">{{vm.searched[vm.searched.length -2]}}</button>
+            <button type="button" class="btn btn-secondary" ng-click="vm.searchForWeather(vm.searched[vm.searched.length -3])">{{vm.searched[vm.searched.length -3]}}</button>
+            <button type="button" class="btn btn-secondary" ng-click="vm.searchForWeather(vm.searched[vm.searched.length -4])">{{vm.searched[vm.searched.length -4]}}</button>
+          </div>
         </div>
       </div>
+
       <!-- Right Column -->
       <div class="col-xs-12 col-md-8">
         <div class="panel panel-default">
@@ -53,37 +53,30 @@
               <div class="col-sm-12 col-md-4">
                   <h5> Temperature (F) </h5>
                   <p>{{vm.detailedResults.temp}}F</p>
-
               </div>
               <div class="col-sm-12 col-md-4">
                   <h5> Pressure </h5>
                   <p>{{vm.detailedResults.pressure}}</p>
-
               </div>
               <div class="col-sm-12 col-md-4">
                   <h5> Humidity </h5>
                   <p>{{vm.detailedResults.humidity}}%</p>
-
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12 col-md-4">
                   <h5> Lowest Temperature (F)</h5>
                   <p>{{vm.detailedResults.tempMin}}F</p>
-
               </div>
               <div class="col-sm-12 col-md-4">
                   <h5> Highest Temperature (F)</h5>
                   <p>{{vm.detailedResults.tempMax}}F</p>
-
               </div>
               <div class="col-sm-12 col-md-4">
                   <h5> Wind Speed </h5>
                   <p>{{vm.detailedResults.windSpeed}}mph</p>
-
               </div>
             </div>
-
           </div>
           <!-- End of panel body -->
         </div>
@@ -107,11 +100,10 @@
 
 
     <!-- bower:js -->
-
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/app/app.js"></script>
