@@ -98,7 +98,7 @@
               <div class="panel-heading">Recent Searches</div>
               <div class="panel-body">
                 <ul style="list-style: none">
-                  <li class="list" ng-repeat="searched in vm.searched" ng-bind-template="{{::vm.detailedResults.cityName}} {{::vm.date| date:'short'}}">
+                  <li class="list" ng-repeat="searched in vm.searched" ng-bind-template="{{::vm.detailedResults.cityName}} {{::vm.detailedResults.temp}}F {{::vm.date| date:'short'}}">
                   </li>
                 </ul>
               </div>
